@@ -1,0 +1,49 @@
+import { Meta, Canvas, Story, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import BaseFormItem from './FormItem.vue'
+import BaseInput from './Input.vue'
+
+<Meta title="BaseInput" component={BaseInput} />
+
+# Example
+
+<Canvas>
+  <Story name="BaseInput">
+    {{
+      template: `
+        <div>
+          <base-form-item label="Full name" message="Full name is required.">
+            <template #default="{ data }">
+              <base-input :id="data.id" placeholder="Enter your full name." />
+            </template>
+          </base-form-item>
+          <base-form-item label="Email" message="Email is required.">
+            <template #default="{ data }">
+              <base-input :id="data.id" type="email" placeholder="Enter your email." />
+            </template>
+          </base-form-item>
+          <base-form-item label="Password" message="Password is required.">
+            <template #default="{ data }">
+              <base-input :id="data.id" type="password" placeholder="Enter your password." />
+            </template>
+          </base-form-item>
+          <base-form-item label="Phone number" message="Phone number is required.">
+            <template #default="{ data }">
+              <base-input :id="data.id" type="tel" placeholder="Enter your phone number." />
+            </template>
+          </base-form-item>
+          <base-form-item label="Number" message="Number is required.">
+            <template #default="{ data }">
+              <base-input :id="data.id" type="number" placeholder="Enter your number." />
+            </template>
+          </base-form-item>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+# Props
+
+<Props of={BaseInput} />

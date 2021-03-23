@@ -1,0 +1,27 @@
+import { Meta, Canvas, Story, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import BaseFormItem from './FormItem.vue'
+import BaseTextarea from './Textarea.vue'
+
+<Meta title="BaseTextarea" component={BaseTextarea} />
+
+# Example
+
+<Canvas>
+  <Story name="BaseTextarea">
+    {{
+      template: `
+        <base-form-item label="Comments" message="Comment is required.">
+          <template #default="{ data }">
+            <base-textarea :id="data.id" placeholder="Enter comments" />
+          </template>
+        </base-form-item>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+# Props
+
+<Props of={BaseTextarea} />

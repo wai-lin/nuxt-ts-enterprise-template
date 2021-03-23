@@ -1,0 +1,71 @@
+import { Meta, Canvas, Story, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import BaseButton from './Button.vue'
+
+<Meta title="BaseButton" component={BaseButton} />
+
+# Examples
+
+## Basic Button
+
+<Canvas>
+  <Story name="Basic Button">
+    {{
+      template: `
+        <base-button
+          class="border-0 rounded-lg text-white bg-green-500 hover:bg-green-400 active:bg-green-600 "
+          @click="clickHandler"
+        >
+          Button
+        </base-button>
+      `,
+      methods: {
+        clickHandler() {
+          action('btn-clicked')()
+        },
+      },
+    }}
+  </Story>
+</Canvas>
+
+## Other Variants
+
+<Canvas>
+  <Story name="Other Variants">
+    {{
+      template: `
+        <div class="grid grid-flow-col gap-4">
+          <div>
+            <base-button is-loading>Button</base-button>
+          </div>
+          <div>
+            <base-button is-circle is-loading></base-button>
+          </div>
+          <div>
+            <base-button is-loading is-disabled>
+              <template #s-loading>
+                custom loading ...
+              </template>
+            </base-button>
+          </div>
+          <div>
+            <base-button is-disabled class="w-32">Disabled</base-button>
+          </div>
+          <div>
+            <base-button is-circle is-loading is-disabled></base-button>
+          </div>
+          <div>
+            <base-button tag-name="a" target="_blank" href="https://www.google.com" class="w-32 border-none underline text-sm">
+              Google Link
+            </base-button>
+          </div>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+# Props
+
+<Props of={BaseButton} />

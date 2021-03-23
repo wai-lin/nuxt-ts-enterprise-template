@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import BaseOtpInput from './OtpInput.vue'
+
+<Meta title="BaseOtpInput" component={BaseOtpInput} />
+
+# Example
+
+<Canvas>
+  <Story name="BaseOtpInput">
+    {{
+      template: `
+        <form class="flex flex-col space-y-4">
+          <base-otp-input input-id-label="otp1" />
+        </form>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+# Props
+
+<Props of={BaseOtpInput} />

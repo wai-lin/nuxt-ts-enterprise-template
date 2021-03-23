@@ -1,0 +1,26 @@
+import { Meta, Canvas, Story, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import BaseRadio from './Radio.vue'
+
+<Meta title="BaseRadio" component={BaseRadio} />
+
+# Example
+
+<Canvas>
+  <Story name="BaseRadio">
+    {{
+      template: `
+        <div>
+          <base-radio name="options" label="Option 1" checked="checked" />
+          <base-radio name="options" label="Option 2" />
+          <base-radio name="options" label="Option 3" />
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+# Props
+
+<Props of={BaseRadio} />

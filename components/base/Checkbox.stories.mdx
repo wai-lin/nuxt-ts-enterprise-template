@@ -1,0 +1,32 @@
+import { Meta, Canvas, Story, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import BaseCheckbox from './Checkbox.vue'
+
+<Meta title="BaseCheckbox" component={BaseCheckbox} />
+
+# Example
+
+<Canvas>
+  <Story name="BaseCheckbox">
+    {{
+      data() {
+        return {
+          option2: false,
+        }
+      },
+      template: `
+        <div>
+          <base-checkbox label="Option 1" checked="checked" />
+          Option 2 : {{ option2 }}
+          <base-checkbox v-model="option2" label="Option 2" />
+          <base-checkbox label="Option 3" />
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+# Props
+
+<Props of={BaseCheckbox} />

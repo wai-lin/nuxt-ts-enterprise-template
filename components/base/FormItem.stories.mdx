@@ -1,0 +1,29 @@
+import { Meta, Canvas, Story, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import BaseFormItem from './FormItem.vue'
+
+<Meta title="BaseFormItem" component={BaseFormItem} />
+
+# Example
+
+<Canvas>
+  <Story name="BaseFormItem">
+    {{
+      template: `
+        <base-form-item label="Label" message="message">
+          <template #s-message="{ message }">
+            <p class="text-green-600">Custom message! {{ message }}</p>
+          </template>
+          <template #default="{ data }">
+            <input :id="data.id" type="text" :placeholder="data.label" />
+          </template>
+        </base-form-item>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+# Props
+
+<Props of={BaseFormItem} />

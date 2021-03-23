@@ -1,0 +1,48 @@
+import { Meta, Canvas, Story, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import BaseSelect from './Select.vue'
+
+<Meta title="BaseSelect" component={BaseSelect} />
+
+# Example
+
+<Canvas>
+  <Story name="BaseSelect">
+    {{
+      data() {
+        return {
+          options: [
+            'Please select your favorite fruit.',
+            'apple',
+            'orange',
+            'grapes',
+            'mango',
+            'tomato',
+            'pineapple',
+          ],
+        }
+      },
+      template: `
+        <div>
+          <base-select id-label="fruits" :options="options">
+            <template #default="{ data }">
+              <option
+                :key="data.id"
+                :value="data.idx === 0 ? '' : data.option"
+                :selected="data.idx === 0"
+                :disabled="data.idx === 0"
+              >
+                {{ data.option }}
+              </option>
+            </template>
+          </base-select>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+# Props
+
+<Props of={BaseSelect} />
